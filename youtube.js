@@ -10,6 +10,7 @@ const urlVideo = (msg, queryText)=>{
             console.log(queryText)
             if(!err){
                 console.log(JSON.stringify(data,null,2))
+                //Revisar essa linha
                 const videosIds = data.items.map((item)=> item.id.videoId).filter(item=>item)
                 const youtubeLink = videosIds.map(videoId=>`https://www.youtube.com/watch?v=${videoId}`)
                 resolved(`${message} ${youtubeLink.join(`, `)}`)
